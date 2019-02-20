@@ -1,5 +1,5 @@
 
-# Project 2: Linear Regression Modeling with Ames, IA Housing Data
+# Predicting House Prices in Ames, IA
 
 ![](https://livability.com/sites/default/files/1Reiman%20Gardens.JPG)
 _Courtesy of the Ames Chamber of Commerce_
