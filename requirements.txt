@@ -1,0 +1,4 @@
+jupyter-lab
+streamlit==0.76.0
+missingno==0.4.2
+sklearn==0.24.1
