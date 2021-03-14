@@ -1,2 +1,4 @@
 .DS_STORE
 submissions
+__pycache__
+.ipynb_checkpoints
