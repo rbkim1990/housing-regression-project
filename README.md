@@ -6,7 +6,7 @@ _Courtesy of the Ames Chamber of Commerce_
 #### Using the Streamlit Web App
 1. Clone locally
 2. Navigate to project folder in CLI
-3. `pip install requirements.txt'
+3. `pip install requirements.txt`
 4. `streamlit run SalePricePredictor.py`
 
 ### Background Information
@@ -57,7 +57,7 @@ There are 2 notebooks with following purposes:
 - Presentation.pdf: Presentation for Non-Technical Audience
 - SalePricePredictor.py: Streamlit Web App for interactive predictions
 - score.py: Python file for batch inferencing
-  - `python score.py <dataset_file_path> <output_csv_file_path>'
+  - `python score.py <dataset_file_path> <output_csv_file_path>`
 
 ### Executive Summary
 The project started with a need to clean the data. The Ames dataset, while very detailed, also has some issues of missing values. Using the MissingNo library, I was able to located the missing (null) values and visually represent them on the notebook. Most of the missing values were due to the fact that the Ames dataset uses "NA" to describe a feature that is lacking (ie. garage quality when there is no garage). Knowing that this would cause errors in the later models that I was to use, I filled the "NA" values with "None". These entries consisted about 90% of the missing data. Other entries, however, were more technically challenging to resolve. For the column "Lot Frontage", there were many missing values for no known reason. I used a linear regression model on a related column, "Lot Area", to predict the values for "Lot Frontage." This allowed me to have a good estimate of what the "Lot Frontage" should be while keeping the data's integrity (without deleting or dismissing data).  
