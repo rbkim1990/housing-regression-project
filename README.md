@@ -1,8 +1,13 @@
 
-# Predicting House Prices in Ames, IA
-
+# Predicting House Prices with the Ames, IA Dataset
 ![](https://livability.com/sites/default/files/1Reiman%20Gardens.JPG)
 _Courtesy of the Ames Chamber of Commerce_
+
+#### Using the Streamlit Web App
+1. Clone locally
+2. Navigate to project folder in CLI
+3. `pip install requirements.txt'
+4. `streamlit run SalePricePredictor.py`
 
 ### Background Information
 The Ames, IA housing data is an especially robust and detailed data set that provides ample opportunity to practice linear regression techniques. Coupled with the need to increase subject-matter expertise, the housing data allowed for development of good data science practices in general.
@@ -17,108 +22,42 @@ The goal of this project is to determine what features are most important in pre
 4. Create a linear regression model that is highly accurate (using the R2 and RMSE scores) to predict sale price
 5. Analyze model to see what the most important features are, and present findings to stakeholders
 
-### Data Dictionary
+### Data Dictionary of final features in model
 |**Feature**|**Type**|**Description**|
 |---|---|---|
-|Id | int |  Observation number |
-|PID| int |  Parcel identification number  - can be used with city web site for parcel review. |
-|MS SubClass| int | Identifies the type of dwelling involved in the sale.	|
-|MS Zoning| obj | Identifies the general zoning classification of the sale. |
-|Lot Frontage| float | Linear feet of street connected to property. |
-|Lot Area| float | Lot size in square feet. |
-|Street| obj| Type of road access to property. |
-|Alley| obj | Type of alley access to property. |
-|Lot Shape| obj | General shape of property. |
-|Land Contour| obj | Flatness of the property. |
-|Utilities| obj | Type of utilities available. |
-|Lot Config| obj | Lot configuration. |
-|Land Slope| obj | Slope of property. |
-|Neighborhood| obj | Physical locations within Ames city limits. |
-|Condition 1| obj | Proximity to various conditions. |
-|Condition 2| obj | Proximity to various conditions (if more than one is present). |
-|Bldg Type| obj | Type of dwelling. |
-|House Style| obj | Style of dwelling.|
 |Overall Qual| obj | Rates the overall material and finish of the house. |
-|Overall Cond| obj | Rates the overall condition of the house. |
 |Year Built| int | Original construction date. |
 |Year Remod/Add| int | Remodel date (same as construction date if no remodeling or additions).|
-|Roof Style| obj | Type of roof.|
-|Roof Matl| obj | Roof material.|
-|Exterior 1| obj | Exterior covering on house.|
-|Exterior 2| obj | Exterior covering on house (if more than one material).|
-|Mas Vnr Type| obj | Masonry veneer type.|
-|Mas Vnr Area| obj | Masonry veneer area in square feet. |
 |Exter Qual| obj | Evaluates the quality of the material on the exterior.|
-|Exter Cond| obj | Evaluates the present condition of the material on the exterior.|
-|Foundation| obj | Type of foundation.|
 |Bsmt Qual| obj | Evaluates the height of the basement. |
-|Bsmt Cond| obj | Evaluates the general condition of the basement. |
-|Bsmt Exposure| obj | Refers to walkout or garden level walls. |
-|BsmtFin Type 1| obj | Rating of basement finished area. |
-|BsmtFin SF 1| float | Type 1 finished square feet. |
-|BsmtFinType 2| obj | Rating of basement finished area (if multiple types).|
-|BsmtFin SF 2| float | Type 2 finished square feet.|
-|Bsmt Unf SF| float | Unfinished square feet of basement area.|
 |Total Bsmt SF| float | Total square feet of basement area.|
-|Heating| obj | Type of heating.|
-|HeatingQC| obj | Heating quality and condition.|
-|Central Air| obj | Central air conditioning.|
-|Electrical| obj |  Electrical system.|
 |1st Flr SF| float | First Floor square feet. | 
-|2nd Flr SF| float | Second floor square feet. |
-|Low Qual Fin SF| float | Low quality finished square feet (all floors).|
 |Gr Liv Area| float | Above grade (ground) living area square feet.|
-|Bsmt Full Bath| int | Basement full bathrooms.|
-|Bsmt Half Bath| int | Basement half bathrooms.|
 |Full Bath| int | Full bathrooms above grade.|
-|Half Bath| int | Half baths above grade.|
-|Bedroom| int | Bedrooms above grade (does NOT include basement bedrooms). |
-|Kitchen| int | Kitchens above grade.|
 |KitchenQual| obj | Kitchen quality.|
 |TotRmsAbvGrd| int |	Total rooms above grade (does not include bathrooms).|
-|Functional| obj | Home functionality (Assume typical unless deductions are warranted).|
-|Fireplaces| int | Number of fireplaces. |
 |FireplaceQu| obj | Fireplace quality. |
-|Garage Type| obj | Garage location. |
-|Garage Yr Blt| int | Year garage was built.|	
 |Garage Finish| obj | Interior finish of the garage.|
 |Garage Cars| int | Size of garage in car capacity. |
 |Garage Area| float |  Size of garage in square feet.|
-|Garage Qual| obj | Garage quality. |
-|Garage Cond| obj | Garage condition.|
-|Paved Drive| obj | Paved driveway. |
-|Wood Deck SF| float | Wood deck area in square feet. |
-|Open Porch SF| float | Open porch area in square feet. |
-|Enclosed Porch| float | Enclosed porch area in square feet. |
-|3-Ssn Porch| float | Three season porch area in square feet. |
-|Screen Porch| float | Screen porch area in square feet. |
-|Pool Area| float | Pool area in square feet. |
-|Pool QC| obj| Pool quality.|
-|Fence| obj | Fence quality. |
-|Misc Feature| obj | Miscellaneous feature not covered in other categories.|
-|Misc Val| float | $Value of miscellaneous feature.|
-|Mo Sold| int | Month Sold (MM).|
-|Yr Sold| int | Year Sold (YYYY).|
-|Sale Type| obj | Type of sale. |
-|Sale Condition| obj | Condition of sale.|
-|SalePrice| float| Sale price $$.|
 
 ### Repository Structure
 **Folders**
-- data : Data files created and needed for project.
-- images : Image files that either have been produced by the project for presentation or other images added to presentation.
+- datasets : Datasets from Kaggle, as well as cleaned datasets produced from notebook and a data dictionary.
+- images : Image files that have been produced by the project for presentation.
+- models : Persisted models and other functions for inference and deployment.
 - notebooks : Notebooks used to clean, analylze, and model predictions here.
-- submissions : CSV files used to submit predictions to Kaggle.
 
 **Notebooks**  
-There are 12 notebooks, each of them serving one or more of the following purposes:
-- Cleaning and resolving null values
-- Organizing data by categorical and numerical features
-- Exploratory data analysis
+There are 2 notebooks with following purposes:
+- Cleaning and resolving null values, as well as other preprocessing
 - Modeling
 
 **Other Files**
 - Presentation.pdf: Presentation for Non-Technical Audience
+- SalePricePredictor.py: Streamlit Web App for interactive predictions
+- score.py: Python file for batch inferencing
+  - `python score.py <dataset_file_path> <output_csv_file_path>'
 
 ### Executive Summary
 The project started with a need to clean the data. The Ames dataset, while very detailed, also has some issues of missing values. Using the MissingNo library, I was able to located the missing (null) values and visually represent them on the notebook. Most of the missing values were due to the fact that the Ames dataset uses "NA" to describe a feature that is lacking (ie. garage quality when there is no garage). Knowing that this would cause errors in the later models that I was to use, I filled the "NA" values with "None". These entries consisted about 90% of the missing data. Other entries, however, were more technically challenging to resolve. For the column "Lot Frontage", there were many missing values for no known reason. I used a linear regression model on a related column, "Lot Area", to predict the values for "Lot Frontage." This allowed me to have a good estimate of what the "Lot Frontage" should be while keeping the data's integrity (without deleting or dismissing data).  
