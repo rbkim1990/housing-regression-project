@@ -6,8 +6,14 @@ _Courtesy of the Ames Chamber of Commerce_
 #### Using the Streamlit Web App
 1. Clone locally
 2. Navigate to project folder in CLI
-3. `pip install requirements.txt`
-4. `streamlit run SalePricePredictor.py`
+3. Create a virtual environment with pipenv or conda env
+4. `pip install requirements.txt`
+5. `streamlit run SalePricePredictor.py`
+
+#### Using the score.py Python file
+1. Clone locally
+2. Nativate to project folder in CLI
+3. `python score.py <file_path_of_csv_file_to_predict_on> <file_path_of_output_csv_with_predictions>`
 
 ### Background Information
 The Ames, IA housing data is an especially robust and detailed data set that provides ample opportunity to practice linear regression techniques. Coupled with the need to increase subject-matter expertise, the housing data allowed for development of good data science practices in general.
